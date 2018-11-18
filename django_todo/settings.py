@@ -26,7 +26,12 @@ SECRET_KEY = 'ei=++86)=3ha^88ur4y3h!ve(xm2u%1#%yeri4htm37evwh2jl'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-todo-markroberts585.c9users.io']
+ALLOWED_HOSTS = ['django-todo-markroberts585.c9users.io'
+                 'mark-simple-django-todo.herokuapp.com']
+                 
+host = os.environ.get('SITE_HOST')
+if host:
+    ALLOWED_HOSTS.append(host)
 
 
 # Application definition
